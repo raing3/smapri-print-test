@@ -4,13 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes,">
 <title>SmaPri Sample</title>
-<script language="JavaScript" type="text/javascript">
+<script>
 var labelLocation = encodeURIComponent("https://cdn.neto.com.au/assets/neto-cdn/sato/1.0.0/6x4GraphicPrintLabel.spfmtz")
 var graphicLocation = encodeURIComponent((new URL("label.png", document.location)).href)
 
 function IOSPrint(){
 	
-	var url = "smapri:/Format/Print?__format_id_number=1&__format_archive_update=update&__format_archive_url=" + labelLocation + "&Graphic="  + graphicLocation + "&__success_redirect_url=" + window.location.href " +&__failure_redirect_url=" + window.location.href;
+	var url = "smapri:/Format/Print?__format_id_number=1&__format_archive_update=update&__format_archive_url=" + labelLocation + "&Graphic="  + graphicLocation + "&__success_redirect_url=" + window.location.href + "&__failure_redirect_url=" + window.location.href;
 	location.href = url;
 }
 
@@ -22,11 +22,9 @@ function IOSPrint(){
 <h2> SmaPri Static Graphic Test Print</h2>
 
 <hr>
-<form id="frmPrint" onsubmit="return false;" method="GET">
 <a href="label.png" target="_blank">Sample PNG file</a>
 <p><input type="button" id="btnPrint" value=" Print " onclick="IOSPrint()"></p>
 </center>
-</form>
 
 </body>
 
