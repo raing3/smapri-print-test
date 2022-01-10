@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes,">
 <title>SmaPri Sample</title>
 <script>
-var labelLocation = encodeURIComponent("https://cdn.neto.com.au/assets/neto-cdn/sato/1.0.0/6x4GraphicPrintLabel.spfmtz")
-var graphicLocation = encodeURIComponent((new URL("label.png", document.location)).href)
+var labelLocation = encodeURIComponent("https://cdn.neto.com.au/assets/neto-cdn/sato/1.0.0/6x4GraphicPrintLabel.spfmtz");
+var graphicLocation = encodeURIComponent((new URL("label.png", document.location)).href);
+var pageLocation = window.location.href.split('?')[0];
 
 function IOSPrint(){
 	
-	var url = "smapri:/Format/Print?__format_id_number=1&__format_archive_update=update&__format_archive_url=" + labelLocation + "&Graphic="  + graphicLocation + "&__success_redirect_url=" + window.location.href + "&__failure_redirect_url=" + window.location.href;
+	var url = "smapri:/Format/Print?__format_id_number=1&__format_archive_update=update&__format_archive_url=" + labelLocation + "&Graphic="  + graphicLocation + "&__success_redirect_url=" + pageLocation + "&__failure_redirect_url=" + pageLocation;
 	location.href = url;
 }
 
